@@ -4,7 +4,9 @@
    ============================================================ */
 
 // ─── Configuration ──────────────────────────────────────────
-const BACKEND_URL       = "http://localhost:8000";
+// 🔧 DEPLOYMENT: Change this to your Render backend URL before deploying
+//    e.g. "https://your-app-name.onrender.com"
+const BACKEND_URL       = "https://trainee-chatbot.onrender.com/";
 const MAX_HISTORY_TURNS = 20;
 const MAX_HISTORY_MSGS  = MAX_HISTORY_TURNS * 2; // user + model per turn
 
