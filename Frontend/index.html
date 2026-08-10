@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered chatbot built with Google Gemini 2.5 Flash. Have intelligent, multi-turn conversations in real-time.">
+    <meta name="theme-color" content="#0a0a1a">
+    <title>Gemini AI Chat</title>
+
+    <!-- Google Fonts — Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container" id="app">
+
+        <!-- ─── Header ───────────────────────────────────── -->
+        <header class="chat-header" id="chatHeader">
+            <div class="header-content">
+                <div class="logo-area">
+                    <div class="logo-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L13.09 8.26L18 6L14.74 10.91L21 12L14.74 13.09L18 18L13.09 15.74L12 22L10.91 15.74L6 18L9.26 13.09L3 12L9.26 10.91L6 6L10.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <div class="header-title">
+                        <h1>Gemini Chat</h1>
+                        <span class="status-badge" id="statusBadge">
+                            <span class="status-dot"></span>
+                            Online
+                        </span>
+                    </div>
+                </div>
+                <button class="clear-btn" id="clearChat" title="New conversation" aria-label="Clear chat and start a new conversation">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.65 6.35A7.958 7.958 0 0 0 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0 1 12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" fill="currentColor"/>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- ─── Chat Messages ────────────────────────────── -->
+        <main class="chat-messages" id="chatMessages" aria-live="polite" aria-label="Chat conversation">
+            <div class="welcome-section" id="welcomeMessage">
+                <div class="welcome-icon" aria-hidden="true">✨</div>
+                <h2>Welcome to Gemini Chat</h2>
+                <p>Ask me anything — I'm powered by Google's Gemini AI with multi-turn conversation memory.</p>
+                <div class="suggestion-chips" id="suggestionChips">
+                    <button class="chip" data-message="Explain quantum computing in simple terms">Explain quantum computing</button>
+                    <button class="chip" data-message="Write a short poem about the night sky">Write a poem about the night sky</button>
+                    <button class="chip" data-message="What are 5 tips for better productivity?">Productivity tips</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- ─── Input Area ───────────────────────────────── -->
+        <footer class="chat-input-area" id="chatInputArea">
+            <form class="input-form" id="chatForm" autocomplete="off">
+                <div class="input-wrapper" id="inputWrapper">
+                    <input
+                        type="text"
+                        id="messageInput"
+                        placeholder="Type your message…"
+                        maxlength="2000"
+                        aria-label="Type your message"
+                        autofocus
+                    >
+                    <button type="submit" class="send-btn" id="sendButton" aria-label="Send message">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="input-footer">
+                    <span class="char-count" id="charCount">0 / 2,000</span>
+                    <span class="powered-by">Powered by Gemini 2.5 Flash</span>
+                </div>
+            </form>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
